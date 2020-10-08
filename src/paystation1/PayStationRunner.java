@@ -19,11 +19,24 @@ public class PayStationRunner {
     public static void main(String[] args) {
         System.out.println("Starting Up!");
         PayStation pStat = new PayStation();
-        System.out.println("Current Value of Pay Station: " + pStat.currentTotal);
-        Scanner sc = new Scanner(System.in);
-        System.out.println("Please Enter Value");
-        int i = sc.nextInt();
-        System.out.println(i);
+        boolean keepProcessing = true;
+        
+        while (keepProcessing==true){
+            System.out.println(pStat.getDisplay());
+            Scanner sc = new Scanner(System.in);
+            System.out.println("Please Enter Coin or 0 to Finish");
+            int i = sc.nextInt();
+            if (i==0){
+                keepProcessing=false;
+                continue;
+            }
+            pStat.addPayment(i);
+            System.out.println(pStat.getDisplay());
+            
+            
+        }
+        
+        
     }
     
 }

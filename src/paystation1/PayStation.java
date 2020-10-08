@@ -11,9 +11,23 @@ package paystation1;
  */
 public class PayStation {
     
-    int currentTotal = 0;
+    private int currentTotal = 0;
+    private int timeInMinutes = 0;
     
-    void addPayment(int coinValue){
+    public PayStation(){
+        this.currentTotal = 0;
+    }
+    
+    public void addPayment(int coinValue){
+        this.currentTotal += coinValue;
+        this.timeInMinutes = this.currentTotal * 2;
+        
+    }
+    
+    public String getDisplay() {
+        String output = "Current Total is :\t" + this.currentTotal + "\n";
+        output +="Current Time is :\t" + this.timeInMinutes+ "\n";
+        return output;
         
     }
     
