@@ -18,8 +18,8 @@ public class PayStation {
         this.currentTotal = 0;
     }
     
-    public void addPayment(int coinValue){
-        this.currentTotal += coinValue;
+    public void addPayment(int coinsValue){
+        this.currentTotal += coinsValue;
         this.timeInMinutes = this.currentTotal * 2;
         
     }
